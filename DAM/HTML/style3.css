@@ -1,0 +1,98 @@
+*{
+    margin: 0; /*Margen desde el elemento hacia fuera*/
+    padding: 0; /*El aire que le rodea alrededor del contenido*/
+    font-size: 20px;
+    font-weight: 200;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+h1,h2,h3{
+    font-size: 28px;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 4px;
+    color: #001858;
+}
+
+li{
+    list-style-type: none;
+    padding-left: 20px;
+}
+
+body{
+    background-color: #fef6e4;
+    color: #172c66;
+}
+
+header{
+    text-align: center;
+    padding: 20px;
+}
+
+#perros{
+    padding: 20px;
+}
+
+footer{
+    margin: 20px;
+    padding:20px;
+    text-align: center;
+    border: 2px solid black;
+}
+
+#box {
+    width: 300px;
+    height: 300px;
+    border: 2px solid orange;
+    padding: 20px;
+    margin: 20px;
+    text-align: center;
+    border-radius: 30px;
+}
+
+#box >p{
+    color:red;
+    background-color: black ;
+    width: 100%;
+    height: 100%;
+}
+
+#box2{
+    width: 300px;
+    height: 300px;
+    border: 2px solid black;
+    margin: 20px;
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    text-align: center;
+}
+
+#box2 >p{
+    color:yellowgreen;
+    width: 100%;
+    height: 100%;
+}
+
+#box3{
+    width: 300px;
+    height: 300px;
+    
+    padding: 20px 10px 40px 5px; /*se leería como la dirección de un reloj y es un atajo que usa
+    muchísima gente en lugar de estar poniendo el padding-top padding-right padding-bottom padding-left*/
+    margin: 20px;
+    text-align: center;
+    border-radius: 30px;
+    border-style: dashed;
+    border-color: red;
+    border-width: 4px;
+}
+
+#box3 >p{
+    background-color: #001858;
+    width: 100%;
+    height: 100%;
+    color: #fef6e4;
+}
