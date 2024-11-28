@@ -30,7 +30,7 @@ public class RecomendadorPeliculas{
         if (genero.equalsIgnoreCase("Terror")){
             
             if (duracion<90){
-                System.out.println("Te recomiendo A Quiet Place (90 minutos)");
+                System.out.println("Te recomiendo A Quiet Place (94 minutos)");
             }
             else if (duracion >= 90 && duracion < 120) {
                 System.out.println("Te recomiendo Silent Hill 2 (112 minutos)");
