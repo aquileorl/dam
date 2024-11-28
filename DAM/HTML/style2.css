@@ -1,0 +1,79 @@
+
+/*Vamos a empezar con un poco de sintaxis básica*/
+
+selector { /*el selector es el elemento(s) al que señalo y que quiero maquetar*/
+    propiedad: valor;
+    propiedad: valor;
+    propiedad: valor;
+}
+
+
+h1 {
+    color: blue;  /*color del texto en rojo*/
+    text-transform: uppercase;  /*pasar a mayúscula el texto*/
+    text-decoration: underline;  /*pasar a subrayado el texto*/
+    letter-spacing: 4px;  /*introduce separación de 4px entre letras*/
+}
+
+
+/* Vamos a ver ahora los principales selectores que hay*/
+
+/*PRIMER SELECTOR: selector por etiqueta. Seleccionar la etiqueta del HTML al que quiero
+aplicar el estilo. Por ejemplo la <p>*/
+
+p {
+    font-size: 20px;
+    color: orange;
+    
+} /*De esta forma le estoy aplicando esta maquetación a todas las <p> que haya dentro del código 
+HTML. Es una forma de maquetar GLOBAL Y MUY GENERALISTA. Muy poco específica.*/
+
+body{
+    background-color: black;
+    color: white;
+}
+
+h2,h3,h4,h5,h6{
+    font-size: 30px;
+}
+
+/* Como hemos dicho, esto es una forma de maquetación GLOBAL*/
+
+/*Otra cosa que podemos hacer a nivel global es las listas no tengan ningún símbolo*/
+
+ol  {
+    list-style-type: none;
+}
+
+/*  OTRA FORMA: PONERLE ID A ELEMENTOS
+-> solo puedo aplicar un ID por elemento en el HTML. No puede haber IDs repetidos en el código.
+-> ID es un atributo que debe ser ÚNICO.
+-> ¿Y cómo lo señalamos desde el CSS? Con el símbolo #
+*/
+
+#perros {
+    text-align: center;
+    background-color: rgb(22, 20, 20);
+}
+
+
+/*Y ahora vamos a hacer lo contrario: quiero maquetar varias cosas compartiendo el estilo 
+independientemente de donde estén. Y ahí es donde entra la SELECCIÓN O MAQUETACIÓN POR CLASE
+
+Recordar que por ID es solo de carácter único. Pues con clase podemos compartir estilos.
+usaremos class y para hacer referencia aquí en el css usaremos el .
+*/
+
+.parrafo {
+    color: green;
+}
+
+#titulo {
+    color: pink;
+}
+
+h1{
+    color: yellow;
+}
+
+
