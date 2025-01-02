@@ -55,7 +55,7 @@
                      sc.next();
                      correcto = false;
                }
-           } while (!correcto);
+           } while (!correcto); //saldrá del bucle cuando correcto sea true
 
            //IMPRIMIMOS MENÚ EN PANTALLA Y ELEGIMOS SINTOMA
            System.out.println("¿Síntoma?");
@@ -65,13 +65,32 @@
            System.out.println("\t Confusión o desorientación (3)");
            System.out.print(": ");
 
-           sintoma = sc.nextByte();
+           correcto = false;
+
+           do { 
+               if(sc.hasNextByte()){
+                     sintoma = sc.nextByte();
+                     if ((sintoma >= VALORMINIMO_SINTOMA) && (sintoma <= VALORMAXIMO_SINTOMA)) {
+                            correcto = true;      
+                     }
+                     else{
+                            System.out.println("Error de rango. Inserte opción de 0 a 3: ");
+                            correcto= false;
+                     }
+               } else {
+                     System.out.println("Tipo de dato introducido erróneo. Inserte opción entre 0 a 3");
+                     sc.next();
+                     correcto = false;
+               }
+           } while (!correcto);
+
+          /**  sintoma = sc.nextByte();
            
            //ASEGURAMOS VALOR SINTOMA CORRECTO
            while (sintoma < VALORMINIMO_SINTOMA || sintoma > VALORMAXIMO_SINTOMA){
               System.out.println("Síntoma no registre. Elija uno registrado:");
-              sintoma = sc.nextByte();
-           }
+              sintoma = sc.nextByte(); 
+           } **/
            
            //ASIGNAMOS EXPLORACIÓN SEGÚN VALOR SÍNTOMA
            switch (sintoma){
