@@ -47,7 +47,9 @@
                      } else { 
                             System.out.println("Error en el rango.");
                             System.out.println("Valores válidos "+VALORMINIMO_NUSS+" - "+VALORMAXIMO_NUSS);
-                            correcto = false; //no se cumple condición y repetimos bucle
+                            correcto = false; //no se cumple condición y repetimos bucle. Aunque 
+                            // realmente no es necesario ponerlo, ya que se inicializa false de por sí.
+                            //Lo hacemos más que nada por seguridad
                      }
                } else {
                      System.out.println("Error de tipo.");
@@ -56,6 +58,8 @@
                      correcto = false;
                }
            } while (!correcto); //saldrá del bucle cuando correcto sea true
+
+           
 
            //IMPRIMIMOS MENÚ EN PANTALLA Y ELEGIMOS SINTOMA
            System.out.println("¿Síntoma?");
@@ -84,30 +88,32 @@
                }
            } while (!correcto);
 
-          /**  sintoma = sc.nextByte();
-           
-           //ASEGURAMOS VALOR SINTOMA CORRECTO
-           while (sintoma < VALORMINIMO_SINTOMA || sintoma > VALORMAXIMO_SINTOMA){
-              System.out.println("Síntoma no registre. Elija uno registrado:");
-              sintoma = sc.nextByte(); 
-           } **/
            
            //ASIGNAMOS EXPLORACIÓN SEGÚN VALOR SÍNTOMA
            switch (sintoma){
-              case 0: System.out.println("Exploración: ");
-                     System.out.println("\t Dolor torácico (0)");
-                     System.out.println("\t Dolor abdominal (1)");
-                     System.out.println("\t Dolor de cabeza (2)");
-                     System.out.println("\t Migraña (3)");
+              case 0:
                      sintoma_paciente = "Dolor";
+                     do{
+                            System.out.println("Exploración: ");
+                            System.out.println("\t Dolor torácico (0)");
+                            System.out.println("\t Dolor abdominal (1)");
+                            System.out.println("\t Dolor de cabeza (2)");
+                            System.out.println("\t Migraña (3)");
 
-                     exploracion = sc.nextByte();
-
-                     while (exploracion < VALORMINIMO_EXPLORACION || exploracion > VALORMAXIMO_EXPLORACION){
-                            System.out.println("Exploración errónea. Escoja una exploración adecuada");
-                            exploracion = sc.nextByte();
-
-                     }
+                            if(sc.hasNextByte()){
+                                   exploracion = sc.nextByte();
+                                   if ((exploracion >= VALORMINIMO_EXPLORACION) && (exploracion <= VALORMAXIMO_EXPLORACION)){
+                                          correcto = true;
+                                   } else{
+                                          correcto = false;
+                                   }
+                            } else{
+                                   System.out.println("Error de tipo");
+                                   sc.next();
+                                   correcto = false;
+                            }
+                     } while(!correcto);
+             
                      
                      switch(exploracion){
                             case 0: exploracion_paciente = "Dolor torácico";
@@ -123,20 +129,36 @@
 
                      }
                      break;
-              case 1: System.out.println("Exploración: ");
-                     System.out.println("\t Fractura osea (0)");
-                     System.out.println("\t Herida de bala (1)");
-                     System.out.println("\t Quemadura (2)");
-                     System.out.println("\t Lesión cerebral traumática (3)");
+              case 1:
                      sintoma_paciente = "Lesión traumática";
+                     do{
 
-                     exploracion = sc.nextByte();
+                            System.out.println("Exploración: ");
+                            System.out.println("\t Fractura osea (0)");
+                            System.out.println("\t Herida de bala (1)");
+                            System.out.println("\t Quemadura (2)");
+                            System.out.println("\t Lesión cerebral traumática (3)");
+                            
+                            //Elegir la opción, asegurar tipo byte primero
+                            if(sc.hasNextByte()){
+                                   exploracion = sc.nextByte();
+                                   if((exploracion>=VALORMINIMO_EXPLORACION)&&(exploracion<=VALORMAXIMO_EXPLORACION)){
+                                          correcto=true;
+                                   }else{
+                                          System.out.print("Elección incorrecta. Vuelve a introducirla:");
+                                          correcto=false;
+                                   }
+
+
+                            } else{
+                                   System.out.print("Error en el tipo de dato. Elige opción válida: ");
+                                   sc.next();
+                                   correcto = false;
+                            }
+
+                     }while(!correcto);
                      
-                     while (exploracion < VALORMINIMO_EXPLORACION || exploracion > VALORMAXIMO_EXPLORACION){
-                            System.out.println("Exploración errónea. Escoja una exploración adecuada");
-                            exploracion = sc.nextByte();
-
-                     }
+                     
                      
                      switch(exploracion){
                             case 0: exploracion_paciente = "Fractura ósea";
@@ -154,20 +176,38 @@
 
                      break;
 
-              case 2: System.out.println("Exploración: ");
-                     System.out.println("\t Neumonía (0)");
-                     System.out.println("\t Meningitis (1)");
-                     System.out.println("\t Infección viral (2)");
-                     System.out.println("\t Reacción alérgica (3)");
+              case 2: 
                      sintoma_paciente = "Fiebre alta";
+              
+                     do { 
+                            System.out.println("Exploración: ");
+                            System.out.println("\t Neumonía (0)");
+                            System.out.println("\t Meningitis (1)");
+                            System.out.println("\t Infección viral (2)");
+                            System.out.println("\t Reacción alérgica (3)");
 
-                     exploracion = sc.nextByte();
+                            if (sc.hasNextByte()) {
+                                exploracion = sc.nextByte();
+                                if ((exploracion>=VALORMINIMO_EXPLORACION)&&(exploracion<=VALORMAXIMO_EXPLORACION)) {
+                                    correcto=true;
+                                } else{
+                                   System.out.print("Error en el rango de elección. Elige opción válida por favor: ");
+                                   correcto=false;
+                                }
+
+                            } else{
+                                   System.out.print("Error tipo dato. Elige opción válida: ");
+                                   sc.next();
+                                   correcto=false;
+                            }
+                         
+                     } while (!correcto);
                      
-                     while (exploracion < VALORMINIMO_EXPLORACION || exploracion > VALORMAXIMO_EXPLORACION){
-                            System.out.println("Exploración errónea. Escoja una exploración adecuada");
-                            exploracion = sc.nextByte();
+                     
 
-                     }
+                     
+                     
+                     
                      switch(exploracion){
                             case 0: exploracion_paciente = "Neumonía";
                             break;
@@ -183,20 +223,35 @@
                      }
                      
                      break;
-              case 3: System.out.println("Exploración: ");
-                     System.out.println("\t Intoxicación por drogas o alcohol (0)");
-                     System.out.println("\t Deshidratación severa (1)");
-                     System.out.println("\t Accidente cerebrovascular (2)");
-                     System.out.println("\t Hipoglucemia severa (3)");
+              case 3: 
                      sintoma_paciente = "Migraña";
+                     do{
+                            System.out.println("Exploración: ");
+                            System.out.println("\t Intoxicación por drogas o alcohol (0)");
+                            System.out.println("\t Deshidratación severa (1)");
+                            System.out.println("\t Accidente cerebrovascular (2)");
+                            System.out.println("\t Hipoglucemia severa (3)");
 
-                     exploracion = sc.nextByte();
+                            if (sc.hasNextByte()) {
+                                   exploracion = sc.nextByte();
+                                   if ((exploracion>=VALORMINIMO_EXPLORACION)&&(exploracion<=VALORMAXIMO_EXPLORACION)) {
+                                       correcto=true;
+                                   } else{
+                                      System.out.print("Error en el rango de elección. Elige opción válida por favor: ");
+                                      correcto=false;
+                                   }
+   
+                               } else{
+                                      System.out.print("Error tipo dato. Elige opción válida: ");
+                                      sc.next();
+                                      correcto=false;
+                               }
 
-                     while (exploracion < VALORMINIMO_EXPLORACION || exploracion > VALORMAXIMO_EXPLORACION){
-                            System.out.println("Exploración errónea. Escoja una exploración adecuada");
-                            exploracion = sc.nextByte();
+                     }while(!correcto);
+                     
+                     
 
-                     }
+                     
 
                      switch(exploracion){
                             case 0: exploracion_paciente = "Intoxicación por drogas";
@@ -216,26 +271,50 @@
            }
            
            //NIVEL DE PRIORIDAD
-           System.out.print("¿Nivel de prioridad?: ");
-           nivelPrioridad = sc.nextByte();
+           
+           do { 
+               System.out.print("¿Nivel de prioridad?: ");
+               if(sc.hasNextByte()){
+                     nivelPrioridad = sc.nextByte();
+                     if ((nivelPrioridad>= VALORMINIMO_PRIORIDAD)&&(nivelPrioridad<=VALORMAXIMO_PRIORIDAD)) {
+                         correcto= true;
+                     } else{
+                            System.out.print("Error en el rango del dato. Elija opción válida: ");
+                            correcto = false;
+                     }
 
-           //ASEGURAMOS DATO CORRECTO
-           while( nivelPrioridad < VALORMINIMO_PRIORIDAD || nivelPrioridad > VALORMAXIMO_PRIORIDAD){
-              System.out.println("Valor incorrecto. Vuelva a asignar prioridad: ");
-              nivelPrioridad = sc.nextByte();
-           }
+               }else{
+                     System.out.print("Error de tipo de dato insertado. Elija otra vez: ");
+                     correcto = false;
+                     sc.next();
+               }
+           } while (!correcto);
+
+           
 
            //PEDIMOS LA TEMPERATURA
-           System.out.print("¿Temperatura actual?: ");
-           temperaturaActual = sc.nextInt();
-           
-           //ASEGURAMOS TEMPERATURA CORRECTA
-           while(temperaturaActual < VALORMINIMO_TEMPERATURA || temperaturaActual > VALORMAXIMO_TEMPERATURA){
-              System.out.println("Temperatura incorrecta. Inserte un nivel válido: ");
-              temperaturaActual = sc.nextInt();
-           }
 
-           System.out.println();
+           do{
+              System.out.print("¿Cuál es la temperatura actual del paciente?: ");
+              if(sc.hasNextInt()){
+                     temperaturaActual = sc.nextInt();
+                     if((temperaturaActual>=VALORMINIMO_TEMPERATURA)&&(temperaturaActual<=VALORMAXIMO_TEMPERATURA)){
+                            correcto=true;
+                     }
+                     else{
+                            System.out.print("Temperatura equivocada, estaría muerto, inserte otra vez: ");
+                            correcto= false;
+                     }
+              }else{
+                     System.out.print("ERROR EN EL TIPO DE DATO. INSERTE UN NÚMERO: ");
+                     sc.next();
+                     correcto = false;
+              }
+           }while(!correcto);
+
+
+
+           
 
            System.out.println("NUSS       SÍNTOMA       EXPLORACIÓN           NIVEL DE PRIORIDAD       TEMPERATURA ACTUAL"); 
            System.out.println(nuss +"     " + sintoma_paciente + "      " + exploracion_paciente + "       " +  nivelPrioridad + "\t\t      " +  temperaturaActual);
