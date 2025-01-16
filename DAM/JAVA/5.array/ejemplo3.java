@@ -78,5 +78,14 @@ public class ejemplo3 {
         arr3[0] = 10;
         //Esto dará 10 en la posición 0 del arr3. Pero la posición 0 del arr4 seguirá siendo 0;
         //porque esto copia contenido, no dirección de memoria.
+        System.out.println("\n");
+        System.out.print("El vector arr3 es: ");
+        for(int i=0; i<arr3.length ; i++){
+            System.out.print(arr3[i]+ " ");
+        }
+        System.out.println("El vector arr4 es: ");
+        for(int i=0; i<arr4.length ; i++){
+            System.out.print(arr4[i]+" ");
+        }
     }   
 }

@@ -17,13 +17,18 @@ public class ejemplo4 {
         // -> Vamos a rellenar la matriz con números aleatorios
         for(int i=0 ; i < matriz.length ; i++){
             for(int j = 0; j < matriz[i].length ; j++){
-                matriz[i][j] = rand.nextInt(100)+1; //este método mostrará 100 elementos posibles,
+                matriz[i][j] = rand.nextInt(100)+1; //este método rellenará con 100 elementos posibles,
                 // del 0 al 99, si queremos al 100, sumamos 1.
             }
         }
 
         menor = matriz[0][0];
         mayor = matriz[0][0];
+        /*También podemos hacer en lugar de iniciar las dos variables de esta forma, 
+         * inicializarlas al principio con los siguientes métodos:
+         *      mayor = Integer.MIN_VALUE;
+         *      menor = Integer.MAX_VALUE;
+         */
 
         // -> Vamos a imprimir la matriz
         for(int i=0 ; i < matriz.length ; i++){
