@@ -1,0 +1,66 @@
+/* COMENTARIO  */
+
+body{
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: blue;
+}
+
+header{
+    background-color: gray;
+    color: white;
+    text-align: center;
+    padding: 10px 20px;
+    
+}
+
+section{
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: 0 0 10px;
+    margin: 20px 50px;
+    padding: 20px;
+    max-width: 800px; /*Limitar un máximo de ancho*/
+
+
+}
+
+label{
+    display: block; /*Los objetos de los labels se van a mostrar en un bloque vertical.
+    El label estará arriba y el input estará debajo. También podemos decidir cuánto espacio
+    queremos que haya entre el label y el input, mediante: */
+    margin-bottom: 2px;
+    font-weight: bold;
+
+}
+
+input, textarea{
+    width: 90%; 
+    padding: 10px;
+    border: 1px solid #ccc ; /*Si quitamos el solid y no
+    ponemos nada, será invisible el borde*/
+    border-radius: 4px;
+    font-size: 1em;
+    /*En font size se puede: 
+    -> Usar tamaño large, medium, small
+    -> Usar tamaño en pt como en Word. Ej: 16pt
+    -> Usar medida em: es el tamaño relativo a lo que es la fuente normal
+    para el navegador. Donde 1 es el tamaño estándar para el navegador, y 
+    2 sería el doble.
+    
+    */
+
+}
+
+
+
+footer{
+    text-align: center;
+    color: #fff;
+    background-color: black;
+    padding: 10px;
+    
+}
