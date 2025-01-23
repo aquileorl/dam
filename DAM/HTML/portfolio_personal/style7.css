@@ -1,0 +1,111 @@
+body{
+    background-color: #fef6e4;
+    font-family: 'Helvetica';
+    margin: 0;
+    padding: 0;
+    color: #172c66;
+}
+
+#about-me {
+    justify-content: center;
+    text-align: center;
+    box-shadow: 0 0 10px;
+    border-radius: 10px;
+    padding: 4px;
+}
+
+#about-me > img {
+    border-radius: 120px;
+    display: block;
+    height: auto;
+    width: auto;
+    margin: auto;
+    
+}
+
+
+
+
+header {
+    text-align: center;
+    background-color: #172c66;
+    color: white;
+    padding: 10px;
+    
+}
+
+main {
+    margin: 20px;
+}
+
+footer {
+    text-align: center;
+    margin: 30px;
+}
+
+.main-container {
+    display: flex;
+    gap: 50px;
+}
+
+.content {
+    flex: 3;
+    
+}
+
+aside{
+    flex: 1;
+    
+}
+
+#social-media {
+    text-align: left;
+    
+}
+
+#contact-info{
+    
+    display: block;
+    
+}
+
+.projects-cards {
+    
+    margin: 20px 0px;
+    display: flex;
+    gap: 80px;
+    justify-content: center;
+    
+}
+
+.content > h2{
+    text-align: center;
+    padding: 15px;
+}
+
+.projects-cards .card {
+    
+    border: #172c66 1px solid;
+    margin-top: 20px;
+    padding: 20px;
+    box-shadow: 0 0 5px;
+    border-radius: 8px;
+
+}
+
+#contact-info > button {
+    padding: 10px;
+    background-color: #f582ae;
+    color: #001858;
+    font-weight: bold;
+    font-size: 1em;
+    border-radius: 5px;
+    border: none;
+}
+
+#contact-info > button:hover {
+    background-color: #001858;
+    color: white;
+    box-shadow: 0 0 10px;
+    ;
+}
