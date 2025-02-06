@@ -4,6 +4,45 @@ body{
     margin: 0;
     padding: 0;
     color: #172c66;
+    
+}
+
+nav{
+    text-align: center;
+    background-color:#0d1b44;
+    padding: 10px;
+    border-radius 8px;
+    
+}
+
+.nav-menu{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    
+}
+
+.nav-menu li{
+    display: inline;
+}
+
+.nav-menu a{
+    text-decoration: none;
+    color:#fef6e4;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 8px;
+    
+    
+}
+
+.nav-menu a:hover{
+    background-color:#f582ae;
+    color: #0d1b44;
 }
 
 #about-me {
@@ -30,7 +69,8 @@ header {
     text-align: center;
     background-color: #172c66;
     color: white;
-    padding: 10px;
+    padding: 20px;
+    
     
 }
 
@@ -46,6 +86,8 @@ footer {
 .main-container {
     display: flex;
     gap: 50px;
+    flex-wrap: wrap;
+    padding: 20px;
 }
 
 .content {
@@ -60,6 +102,7 @@ aside{
 
 #social-media {
     text-align: left;
+    display: block;
     
 }
 
@@ -75,22 +118,32 @@ aside{
     display: flex;
     gap: 80px;
     justify-content: center;
+    flex-wrap: wrap;
+    
     
 }
 
 .content > h2{
     text-align: center;
     padding: 15px;
+    
 }
 
-.projects-cards .card {
+.card {
     
     border: #172c66 1px solid;
     margin-top: 20px;
     padding: 20px;
     box-shadow: 0 0 5px;
     border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3 ease;
 
+}
+
+.card:hover{
+    transform: translateY(-10px);
+    box-shadow: 0 8px 12px rgba(0,0,0,0.2);
 }
 
 #contact-info > button {
@@ -108,4 +161,28 @@ aside{
     color: white;
     box-shadow: 0 0 10px;
     ;
+}
+
+.social-menu {
+    list-style-type: none;
+    padding: 0;
+    
+}
+
+.social-menu li{
+    margin-bottom: 10px;
+    
+    
+}
+
+.social-menu a{
+    text-decoration: none;
+    color: #172c66;
+
+}
+
+.social-menu a:hover{
+    background-color: #f582ae;
+    border-radius: 3px;
+    padding: 3px;
 }
