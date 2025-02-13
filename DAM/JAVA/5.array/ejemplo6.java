@@ -25,19 +25,18 @@ public class ejemplo6 {
 
         // MOSTRAMOS LAS VENTAS
         System.out.println("REPORTE DE VENTAS: ");
-        for (int i = 0; i < ventas.length; i++) {
-            System.out.println("REGION "+(i+1)+": ");
-            for(int j=0; j < ventas[i].length ; j++){
-                System.out.println("PRODUCTO "+(j+1)+": ");
-            
-                for(int k=0 ; k < ventas[i][j].length ; k++){
-                    System.out.print("ventas: "+ ventas[i][j][k] + " ");
-                    }
+
+        for(int i = 0; i < ventas.length; i++){
+            System.out.print("Region: "+(i+1)+": ");
+            for(int j = 0 ; j < ventas[i].length ; j++){
+                System.out.println("Producto: "+(j+1)+": ");
+                for(int k = 0; k < ventas[i][j].length ; k++){
+                    System.out.print("Ventas: "+ventas[i][j][k]+" ");
+                }
                 System.out.println();
             }
-            System.out.println();
-        }
 
+        }
     }
     
 }

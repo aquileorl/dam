@@ -43,7 +43,7 @@ public class ejemplo4 {
         System.out.println(rand.nextInt(15-5+1)+5);
 
         //Buscar máximo y mínimo
-        for(int i=0; i<matriz.length;i++){
+        for(int i = 0; i<matriz.length ; i++){
             for(int j = 0; j<matriz[i].length;j++){
                 if ((matriz[i][j]) > mayor ){
                     mayor = matriz[i][j];

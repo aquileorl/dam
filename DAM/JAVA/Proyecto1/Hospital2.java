@@ -313,11 +313,13 @@
            }while(!correcto);
 
 
-
+           sc.close();
            
 
            System.out.println("NUSS       SÍNTOMA       EXPLORACIÓN           NIVEL DE PRIORIDAD       TEMPERATURA ACTUAL"); 
            System.out.println(nuss +"     " + sintoma_paciente + "      " + exploracion_paciente + "       " +  nivelPrioridad + "\t\t      " +  temperaturaActual);
        }
+
+
        
  }
