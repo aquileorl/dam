@@ -1,0 +1,23 @@
+/*li:first-of-type + li{
+    font-style: italic;
+    color: orange;
+}*/
+
+p ~ span {
+    font-style: italic;
+    color: orange;
+}
+
+.lotr > li {
+    color: violet;
+    font-weight: bold;
+}
+
+.hob {
+    color: goldenrod;
+}
+
+.two-towers span {
+    color: blue;
+    font-weight: bold;
+}

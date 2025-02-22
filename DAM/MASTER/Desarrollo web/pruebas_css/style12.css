@@ -1,0 +1,78 @@
+.element {
+    box-shadow: 10px 10px;
+    max-width: 300px;
+}
+
+.element {
+    box-shadow: -5px -5px;
+}
+
+.element {
+    box-shadow: 5px 5px 0; /*sombra sin desenfoque*/
+    box-shadow: 5px 5px 2px; /*sombra con leve desenfoque*/
+    box-shadow: 5px 5px 10px; /*sombra desenfocada*/
+    box-shadow: 5px 5px 40px; /*sombra con un desenfoque casi disipado*/
+    box-shadow: 0 0 10px 5px;
+    box-shadow: 10px 10px 5px blue;
+    box-shadow: -10px 10px blue inset; 
+}
+
+.mi-elemento {
+    margin: 50px auto;
+    max-width: 300px;
+    height: 300px;
+    padding: 50px;
+    border: 1px solid blue;
+    animation: cambiarColor 2s 5;
+    animation-delay: 1s;
+    animation: rotar 2s;
+    animation: aparecer 3s;
+    
+}
+
+
+
+
+
+
+
+@keyframes cambiarColor {
+    0% {
+        background-color: blue;
+    }
+
+    50% {
+        background-color: orange;
+    }
+
+    100% {
+        background-color: blueviolet;
+    }
+}
+
+@keyframes rotar {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes desplazar {
+    from {
+      margin-left: 0px;
+    }
+    to {
+      margin-left: 200px;
+    }
+  }
+
+  @keyframes aparecer {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }

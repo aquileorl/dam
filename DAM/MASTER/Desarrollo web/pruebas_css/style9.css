@@ -1,0 +1,20 @@
+.container {
+    position: relative;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.tooltip {
+    color: blue;
+    position: relative;
+}
+
+.definition {
+    display: none;
+}
+
+.tooltip:hover .definition {
+    display: block;
+    position: absolute;
+}

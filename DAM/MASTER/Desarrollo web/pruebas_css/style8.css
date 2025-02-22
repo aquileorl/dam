@@ -1,0 +1,21 @@
+.profile {
+    background-color: pink;
+    border: 5px solid black;
+    
+}
+
+.profile img {
+    display: block;
+    padding: 20px;
+    margin: 0 auto;
+}
+
+.profile > p {
+    padding: 10px 20px 10px 20px;
+
+}
+
+.profile p:last-child {
+    color: yellow;
+}
+
