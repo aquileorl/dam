@@ -3,24 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
     <title>Panel de Control</title>
 </head>
 <body>
-    <header>
-        <!-- Logo incluido dentro del h1 -->
-        <h1>
-            <img src="images/logo.png" alt="Logo" class="logo">
-            Inmobiliaria Madrigueras
-        </h1>
-        <nav>
-            <a href="#">Inicio</a>
-            <a href="#">Configuración</a>
-            <a href="#">Perfil</a>
-            <a href="#">Cerrar sesión</a>
-        </nav>
-    </header>
+    <!-- CONTENEDOR QUE ENGLOBARÁ TODO -->
     <div class="container">
+
+        <!-- BLOQUE DEL HEADER -->
+        <header>
+            <h1>
+                <img src="images/logo.png" alt="logo" class="logo">
+                Inmobiliara Madrigueras
+            </h1>
+            <nav>
+                <a href="#">Inicio</a>
+                <a href="#">Configuración</a>
+                <a href="#">Perfil</a>
+                <a href="#">Cerrar sesión</a>
+
+            </nav>
+        </header>
+
+        <!-- BLOQUE DEL SIDEBAR -->
+
         <div class="sidebar-container">
             <aside class="sidebar">
                 <ul>
@@ -31,34 +37,37 @@
                 </ul>
             </aside>
         </div>
-        <main>
-            <section class="stats">
-                <div class="stat-box">Categoría 1</div>
-                <div class="stat-box">Categoría 2</div>
-                <div class="stat-box">Categoría 3</div>
-            </section>
-            <section class="data">
+
+        <!-- BLOQUE PRINCIPAL MAIN -->
+         <main>
+
+            <!-- sección de categorías -->
+             <section class="category">
+                <div class="category-box">Categoría 1</div>
+                <div class="category-box">Categoría 2</div>
+                <div class="category-box">Categoría 3</div>
+
+             </section>
+
+             <!-- sección de tipos de vivienda -->
+              <section class="types">
                 <h2>Tipos de vivienda</h2>
                 <ul>
-                    <!-- Imágenes añadidas a cada elemento -->
-                    <li>
-                        <img src="images/vivienda1.jpg" alt="Elemento 1" class="data-icon">
-                        Elemento 1
-                    </li>
-                    <li>
-                        <img src="images/vivienda2.jpg" alt="Elemento 2" class="data-icon">
-                        Elemento 2
-                    </li>
-                    <li>
-                        <img src="images/vivienda3.jpg" alt="Elemento 3" class="data-icon">
-                        Elemento 3
-                    </li>
+                    <li><img src="images/vivienda1.jpg" alt="elemento 1" class="types-icon">Elemento 1</li>
+                    <li><img src="images/vivienda2.jpg" alt="elemento 2" class="types-icon">Elemento 2</li>
+                    <li><img src="images/vivienda3.jpg" alt="elemento 3" class="types-icon">Elemento 3</li>
+
                 </ul>
-            </section>
-        </main>
+
+              </section>
+         </main>
+
+         <!-- BLOQUE DEL FOOTER -->
+          <footer>
+            <p>&copy; 2025 Mi Aplicación</p>
+          </footer>
+
     </div>
-    <footer>
-        <p>&copy; 2025 Mi Aplicación</p>
-    </footer>
+    
 </body>
 </html>
