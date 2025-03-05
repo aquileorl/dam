@@ -48,9 +48,10 @@ header nav a{
     "sidebar main"
     "footer footer" ;
 
-    grid-template-columns: 20% 80%;
+    grid-template-columns: 2% 98%;
     grid-template-rows: auto 1fr auto;
     height: 100vh; /* hace que el contenedor ocupe el 100% de la ventana del navegador*/
+    transition-duration: 0.3s;
 }
 
 /* ASIGNACIÓN ÁREAS DEL GRID */
@@ -81,7 +82,12 @@ header {
 }
 
 .sidebar-container:hover .sidebar {
-    transform: translateX(0%);
+    transform: translateX(0%); 
+    
+}
+
+.container:has(.sidebar-container:hover) {
+    grid-template-columns: 20% 80%;
 }
 
 
@@ -166,9 +172,9 @@ footer {
         grid-template-columns: 1fr; /*Las columnas se apilan en 1 sola columna*/
     }
 
-.sidebar-container{
-    width: 100%;
-}
+    .sidebar-container{
+        width: 100%;
+    }
 
     .sidebar {
         transform: none;
@@ -177,4 +183,7 @@ footer {
         height: auto;
     }
 
+    .container:has(.sidebar-container:hover) {
+        grid-template-columns: 100%;
+    }
 } 
