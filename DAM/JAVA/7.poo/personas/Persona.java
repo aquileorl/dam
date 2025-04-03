@@ -1,37 +1,32 @@
 package personas;
 
 public class Persona {
-    //ATRIBUTOS DE LA PERSONA (cómo defino a la persona)
-    private String nombre;
-    private int edad;
-    private String dni; 
-    private String direccion;
+    
+    //ATRIBUTOS -> características que tendrá la persona
+    String nombre;
+    int edad;
+    String direccion;
 
-    //CONSTRUCTOR
-    public Persona(String nombre, int edad, String dni, String direccion){
-        this.nombre=nombre;
-        this.edad=edad;
-        this.dni= dni;
-        this.direccion=direccion;
+    //CONSTRUCTOR -> cómo se construirá un objeto Persona
+    public Persona(String nombre, int edad, String direccion){
+        this.nombre = nombre;
+        this.edad = edad;
+        this.direccion = direccion;
     }
 
-
-    //MÉTODOS
+    //MÉTODOS -> cómo interactuamos con la persona
+    
+    //método para obtener su nombre
     public String getNombre(){
         return this.nombre;
     }
-
-    public void SetNombre(String nombre){
+    //método para establecer su nombre
+    public void setNombre(String nombre){
         this.nombre = nombre;
     }
-
+    //método para obtener su edad
     public int getEdad(){
-        return edad;
+        return this.edad;
     }
-
-    public void setEdad(int edad){
-        this.edad = edad;
-    }
-
 
 }
