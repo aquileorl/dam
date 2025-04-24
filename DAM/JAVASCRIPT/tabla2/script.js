@@ -65,6 +65,7 @@ function actualizarTabla(){
                 <td> ${personas[i].nombre} </td> 
                 <td>  ${personas[i].edad} </td>
                 <td>  ${personas[i].ocupacion}   </td>
+                <td> <button id="eliminarPersona" onclick="borrarPersona(${i})"> Eliminar </button> </td>
 
 
             </tr>
@@ -73,4 +74,11 @@ function actualizarTabla(){
         //Ahora enviamos la fila a la tabla
         tabla.innerHTML += fila;
     }
+}
+
+function borrarPersona(index){
+    personas.splice(index,1); //método con el que podemos eliminar elementos de un vector
+    //splice(argumento 1, argumento 2); -> argumento 1: posición de la cual quiero partir
+    //argumento 2: cuántos elementos quiero eliminar desde la posición de argumento 1 (en nuestro caso solo 1);
+    actualizarTabla();
 }
