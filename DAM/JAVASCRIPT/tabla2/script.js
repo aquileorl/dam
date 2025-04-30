@@ -1,9 +1,15 @@
 
 //Vamos a definir un elemento vector 
 
-let personas = [];
+let personas =  JSON.parse(localStorage.getItem("personas")) || [];
+
 let editIndex =-1; //indice no válido para un vector, por tanto es seguro inicializarlo así
 
+window.onload = () => {
+
+    actualizarTabla();
+
+};
 
 
 document.getElementById("agregar").addEventListener("click",function(){
@@ -32,6 +38,8 @@ document.getElementById("agregar").addEventListener("click",function(){
 
     //ahora añadimos los valores de la persona
     personas.push(persona);
+
+    guardarLocalStorage();
 
     //ahora limpiamos las casillas del formulario
     document.getElementById("nombre").value="";
@@ -92,6 +100,7 @@ function borrarPersona(index){
     personas.splice(index,1); //método con el que podemos eliminar elementos de un vector
     //splice(argumento 1, argumento 2); -> argumento 1: posición de la cual quiero partir
     //argumento 2: cuántos elementos quiero eliminar desde la posición de argumento 1 (en nuestro caso solo 1);
+    guardarLocalStorage();
     actualizarTabla();
 }
 
@@ -131,6 +140,7 @@ document.querySelector("#editar").addEventListener("click",function(){
     let gendre2 = generoSeleccionado3 ? generoSeleccionado3.value : "No Seleccionado";
     personas[editIndex].genero = gendre2;
 
+    guardarLocalStorage();
     actualizarTabla();
 
     document.querySelector("#agregar").style.display = "block";
@@ -149,4 +159,29 @@ document.querySelector("#editar").addEventListener("click",function(){
 });
 
 
+function guardarLocalStorage(){
+    localStorage.setItem("personas" , JSON.stringify(personas));
+}
 
+function exportarXML(){
+
+    let xml='<?xml version="1.0" encoding="UTF-8" ?>';
+    xml += '<personas>';
+    personas.forEach( p => {
+        xml +=`<persona>
+            <nombre> ${p.nombre} </nombre>
+            <edad> ${p.edad} </edad>
+            <ocupacion> ${p.ocupacion} </ocupacion>
+            <genero> ${p.genero} </genero>
+        </persona>
+        `
+    });
+    xml += '</personas>';
+
+    const blob = new Blob([xml], {type:"application/xml"});
+
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = "personas.xml";
+    a.click();
+}
