@@ -2,6 +2,7 @@
 //Vamos a definir un elemento vector 
 
 let personas = [];
+let editIndex =-1; //indice no válido para un vector, por tanto es seguro inicializarlo así
 
 
 
@@ -10,6 +11,8 @@ document.getElementById("agregar").addEventListener("click",function(){
     let nombreP = document.getElementById("nombre").value.trim();
     let edadP = parseFloat(document.getElementById("edad").value.trim());
     let ocupacionP = document.getElementById("ocupacion").value.trim();
+    let generoSeleccionado = document.querySelector('input[name="genero"]:checked');
+    let generoP = generoSeleccionado ? generoSeleccionado.value : "No seleccionado";
 
 
     if(nombreP == "" || edadP == "" || ocupacionP == ""){
@@ -23,7 +26,8 @@ document.getElementById("agregar").addEventListener("click",function(){
     let persona = {
         nombre: nombreP, //el primer nombre es el nombre de la etiqueta, el segundo nombre es la variable con el valor
         edad: edadP,
-        ocupacion: ocupacionP
+        ocupacion: ocupacionP,
+        genero: generoP
     };
 
     //ahora añadimos los valores de la persona
@@ -33,6 +37,10 @@ document.getElementById("agregar").addEventListener("click",function(){
     document.getElementById("nombre").value="";
     document.getElementById("edad").value="";
     document.getElementById("ocupacion").value="";
+    if(generoSeleccionado){
+        generoSeleccionado.checked = false;
+    }
+    
 
     //actualizamos la tabla con la función que creamos abajo
     actualizarTabla();
@@ -65,7 +73,11 @@ function actualizarTabla(){
                 <td> ${personas[i].nombre} </td> 
                 <td>  ${personas[i].edad} </td>
                 <td>  ${personas[i].ocupacion}   </td>
-                <td> <button id="eliminarPersona" onclick="borrarPersona(${i})"> Eliminar </button> </td>
+                <td> ${personas[i].genero} </td>
+                <td> 
+                    <button class=edit-button id=editarPersona onclick="editarPersona(${i})">Editar</button>
+                    <button class=delete-button id="eliminarPersona" onclick="borrarPersona(${i})"> Eliminar </button> 
+                </td>
 
 
             </tr>
@@ -82,3 +94,59 @@ function borrarPersona(index){
     //argumento 2: cuántos elementos quiero eliminar desde la posición de argumento 1 (en nuestro caso solo 1);
     actualizarTabla();
 }
+
+function editarPersona(index){
+    
+    let persona = personas[index];
+
+    document.querySelector("#nombre").value = persona.nombre;
+    document.querySelector("#edad").value = persona.edad;
+    document.querySelector("#ocupacion").value = persona.ocupacion;
+    
+    let radios = document.querySelectorAll('input[name="genero"]');
+    
+    radios.forEach(radio => {
+       
+        if(radio.value === persona.genero){
+            radio.checked = true;
+        }
+    });
+
+    document.querySelector("#agregar").style.display = "none" ;
+    document.querySelector("#editar").style.display = "block";
+
+    editIndex = index;
+
+}
+
+document.querySelector("#editar").addEventListener("click",function(){
+
+    if(editIndex == -1) return;
+
+    personas[editIndex].nombre = document.getElementById("nombre").value.trim();
+    personas[editIndex].edad = document.getElementById("edad").value.trim();
+    personas[editIndex].ocupacion = document.getElementById("ocupacion").value.trim();
+
+    let generoSeleccionado3 = document.querySelector('input[name="genero"]:checked');
+    let gendre2 = generoSeleccionado3 ? generoSeleccionado3.value : "No Seleccionado";
+    personas[editIndex].genero = gendre2;
+
+    actualizarTabla();
+
+    document.querySelector("#agregar").style.display = "block";
+    document.querySelector("#editar").style.display = "none";
+
+    document.getElementById("nombre").value= "";
+    document.getElementById("edad").value= "";
+    document.getElementById("ocupacion").value ="";
+    if(generoSeleccionado3){
+        generoSeleccionado3.checked = false;
+    }
+
+    editIndex = -1;
+
+
+});
+
+
+

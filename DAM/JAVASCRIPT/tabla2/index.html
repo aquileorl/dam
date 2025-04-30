@@ -47,6 +47,27 @@
             background-color: #28a745;
             color: white;
         }
+
+        .genero{
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .genero label{
+            display: flex;
+            align-items: center;
+            
+        }
+
+        .edit-button{
+            background-color: orange;
+        }
+
+        .delete-button{
+            background-color: red;
+        }
+
+        
     </style>
 
     <script src="script.js" defer></script>
@@ -60,7 +81,17 @@
             <input type="text" id="nombre" placeholder="Nombre" >
             <input type="number" id="edad" placeholder="Edad" >
             <input type="text" id="ocupacion" placeholder="Ocupación" >
+            <div class="genero">
+                
+                <label><input type="radio" name="genero" value="Masculino">Masculino</label>
+                <label><input type="radio" name="genero" value="Femenino">Femenino</label>
+                <label><input type="radio" name="genero" value="Otros">Otros</label>
+
+            </div>
+
+
             <button id="agregar">Agregar Persona</button>
+            <button id="editar" style="display: none;" >Modificar Persona</button>
         
     </div>
 
@@ -71,6 +102,7 @@
                 <th>Nombre</th>
                 <th>Edad</th>
                 <th>Ocupación</th>
+                <th>Género</th>
                 <th>Acción</th>
             </tr>
             
