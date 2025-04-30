@@ -185,3 +185,20 @@ function exportarXML(){
     a.download = "personas.xml";
     a.click();
 }
+
+document.getElementById("fileInput").addEventListener("change", function(event){
+
+    const file = event.target.files[0];
+
+    /*
+    Ahora pondremos una medida de seguridad para asegurarse de que 
+    haya un archivo antes de intentar hacer algo con él, como leerlo o procesarlo.
+    */
+    if(!file){
+        alert("No se seleccióno ningún archivo");
+        return;
+    }
+
+    const reader = new FileReader();
+
+});
