@@ -198,7 +198,47 @@ document.getElementById("fileInput").addEventListener("change", function(event){
         alert("No se seleccióno ningún archivo");
         return;
     }
-
+    
+    
     const reader = new FileReader();
+    reader.readAsText(file);
+
+    reader.onload = function(e){
+
+        const xmlString = e.target.result; //obtenemos en la variable el contenido dentro del archivo en tipo texto
+
+        
+        const parser = new DOMParser();
+        const xmlDoc = parser.parseFromString(  xmlString   ,  "application/xml"   );
+
+        //Ahora construimos el vector, posicionando en cada posicion cada elemento <persona>
+        const personas2 = xmlDoc.getElementsByTagName("persona");
+
+        /*
+            personas2 no es exactamente un array como nuestro vector personas original, es una colección de nodos,
+            un tipo especial de colección que SE PARECE A UN ARRAY, llamada HMTLCollection. Veremos que es por 
+            eso que en el bucle de abajo para volcar el contenido de personas2 a personas es necesarios hacerlo 
+            de la forma que lo hacemos:
+        */
+
+        //vaciamos el vector personas original, porque queremos el que haya en nuestro archivo, volcado en personas2
+        personas = [];
+
+        //ahora rellenamos el vector personas con los objetos que haya en personas2
+        for(let i= 0; i < personas2.length ; i++){
+            
+            const p = personas2[i];
+            let nombre =  p.getElementsByTagName("nombre")[0]?.textContent        || "";
+            let edad =  p.getElementsByTagName("edad")[0]?.textContent        || "";
+            let ocupacion =  p.getElementsByTagName("ocupacion")[0]?.textContent        || "";
+            let genero =  p.getElementsByTagName("genero")[0]?.textContent        || "";
+
+            personas.push({nombre, edad, ocupacion, genero});
+        }
+
+        guardarLocalStorage();
+        actualizarTabla();
+        alert("Datos cargados");
+    }
 
 });

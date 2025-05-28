@@ -1,0 +1,48 @@
+/*
+div {
+    width: 100px;
+    height: 100px;
+}
+
+.relative {
+    position: relative;
+    background-color: aqua;
+    left: 100px;
+    top: 20px;
+}
+
+.absolute {
+    position: absolute;
+    left: 50px;
+    background-color: orange;
+}
+
+.contenedor {
+    height: 1000px;
+    width: 100%;
+    background-color: chocolate;
+
+}
+
+.box1 {
+    height: 150px;
+    width: 150px;
+    background-color: skyblue;
+    position: fixed;
+    margin: 0 auto;
+    top: 100px;
+    left: 200px;
+}
+
+*/
+
+nav {
+
+    height: 150px;
+    width: 100%;
+    background-color: yellow;
+    position: fixed;
+    margin: 0 auto;
+    top: 0;
+      
+}
