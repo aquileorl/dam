@@ -61,4 +61,27 @@ switch (consola) {
             console.log("No conocemos la consola.")
         break;
 }
+
+//TERNARIO => aconsejable solo cuando queremos hacer una pregunta y que tengamos 2 opciones
+/* De ahí su nombre TERnario:
+1- condicion
+2- una opcion
+3- otra opcion
+ */
+const age = 18;
+
+age >= 18 ? console.log("Puede pasar") : console.log("No puede pasar");
+
+//ESTRICTAMENTE IGUAL
+const x  = 10; 
+
+if (x == "10") {
+    console.log("Es igual");
+}
+
+if (x === "10") {
+    console.log("Es igual");
+} else {
+    console.log("No es igual");
+}
     
