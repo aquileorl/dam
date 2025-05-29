@@ -31,10 +31,21 @@ let y = 10%3;
 console.log(y);
 
 
-//EL OPERADOR SUMA TAMBIÉN LO PODEMOS USAR PARA CONCATENAR
+//EL OPERADOR SUMA "+" TAMBIÉN LO PODEMOS USAR PARA CONCATENAR
 const nombre = "Pepe";
 const apellido  ="Rodriguez";
 const edad = 36;
-const frase = "Me llamo "+nombre+ " "+apellido+ " y tengo "+edad+" años."
+const frase = "Me llamo "+ nombre + " " + apellido + " y tengo " + edad + " años."
 console.log(frase);
 
+//OPERADORES LÓGICOS, para sentencias lógicas
+//          > Mayor que
+//          < Menor que
+//          <= Menor o igual que
+//          >= Mayor o igual que
+//          && y 
+//          || Or (o)
+//          ! NOT 
+//          != Distinto
+//          == igual que
+//          === Estrictamente igual que
