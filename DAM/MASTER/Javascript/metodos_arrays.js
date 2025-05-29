@@ -26,7 +26,23 @@ console.log(insertaYtamanyo); //7
 let trozo = array.slice(0,3);
 console.log(trozo);
 
-//splice(): Cambia el contenido array eliminando existentes y/o agregando nuevos
-array.splice(2,1,'a','b');
-console.log(array);
 
+
+//concat(): Retorna un nuevo array que resulta de hacer una concatenacion con otro array
+let array2 = ["CR7", "Messi"];
+let nuevoArray = array.concat(array2);
+console.log(nuevoArray);
+
+
+//indexOf(): Retorna la PRIMERA posición donde se encuentra el elemento que añadimos como argumento
+console.log(nuevoArray.indexOf("CR7")); //<-- 7
+console.log(nuevoArray.indexOf(2));// <-- 1
+
+//sort(): Ordena los elementos del array
+console.log(nuevoArray.sort());
+
+//reverse(): Invierte los elementos del array
+console.log(nuevoArray.reverse());
+
+//toString -> convertirá el array en un String
+console.log(nuevoArray.toString());
