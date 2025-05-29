@@ -17,7 +17,7 @@ for (const alumno of alumnos) {
 }
 
 
-//
+//Usando objetos
 
 const notas = [
     {nombre: "Base de datos", nota: 8},
@@ -29,11 +29,10 @@ const notas = [
 let total = 0;
 for (const nota of notas) {
     console.log(nota.nota);
-    total += nota.nota;
-    
-    
+    total += nota.nota;  
 };
+
 console.log(total);
 let promedio = 0; 
 promedio = total / notas.length;
-console.log(promedio);
+console.log("El promedio de las notas es: ", promedio);
