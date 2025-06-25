@@ -1,0 +1,25 @@
+
+:root {
+  --rtc-color-1: rgb(255, 255, 255);
+  --rtc-color-2: rgb(207, 207, 207);
+  --rtc-color-3: rgb(0, 0, 0);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.completed {
+    text-decoration: line-through;
+    opacity: 0.6;
+}

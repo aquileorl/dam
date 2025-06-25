@@ -1,0 +1,10 @@
+
+body {
+    background-color: beige;
+    color: black;
+}
+
+body.dark {
+    background-color: black;
+    color: beige;
+}
