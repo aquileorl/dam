@@ -1,15 +1,15 @@
 public class Cliente {
 
     private int id;
-    private string nombre;
-    private string email;
+    private String nombre;
+    private String email;
     private double saldo;
 
     public Cliente(){
 
     }
 
-    public Cliente(int id, string nombre, string email, double saldo) {
+    public Cliente(int id, String nombre, String email, double saldo) {
         this.id = id;
         this.nombre = nombre;
         this.email = email;
@@ -24,19 +24,19 @@ public class Cliente {
         this.id = id;
     }
 
-    public string getNombre() {
+    public String getNombre() {
         return nombre;
     }
 
-    public void setNombre(string nombre) {
+    public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
-    public string getEmail() {
+    public String getEmail() {
         return email;
     }
 
-    public void setEmail(string email) {
+    public void setEmail(String email) {
         this.email = email;
     }
 

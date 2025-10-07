@@ -50,5 +50,19 @@ public class TextoPlano {
         } catch (IOException e) {
             e.printStackTrace(); //nos dirá qué tipo de incidencia ha habido, en caso de existir
         }
+
+        //AHORA VAMOS A PROCEDER CON LA LECTURA
+        //Vamos a crear una lista distinta
+        List<Cliente> leidos = new ArrayList<>();
+
+        try (
+                BufferedReader br = Files.newBufferedReader(RUTA, StandardCharsets.UTF_8);
+        ){
+            //Vamos a leer línea a línea, lo mejor es guarda cada línea en una variable que vaya leyendo
+            String linea;
+
+        } catch (IOException e){
+            e.printStackTrace();
+        }
     }
 }
