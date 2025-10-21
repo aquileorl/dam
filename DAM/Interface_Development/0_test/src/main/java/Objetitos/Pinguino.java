@@ -48,14 +48,16 @@ public class Pinguino implements PinguinoSkills {
         return super.clone();
     }
 
-
+/**
     Pinguino p = new Pinguino(456, "Alfredo", 7);
     Pinguino p2 = p.clone();
     Pinguino p3 = p2; //son el mismo objeto, le hemos dicho que p3 sea ESE OBJETO p2, es como ponerle un mote
+
+
     p == p2; //true, porque tiene las propiedades iguales
     p === p2; //porque no son el mismo objeto
     p3 === p2; //true, porque es el mismo objeto pero con "un mote"
-
+*/
 
 
 
