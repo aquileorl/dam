@@ -1,5 +1,6 @@
 package app;
 
+import csv.CsvTable;
 import csv.CsvUtils;
 
 import java.io.BufferedReader;
@@ -21,10 +22,12 @@ public class AppLeerCSV {
 
         //asegurarse que existe el directorio y el archivo
         try{
-            Files.createDirectory(RUTA.getParent()); //dame el padre de este archivo, es decir, el directorio donde está el archivo
+            Files.createDirectories(RUTA.getParent()); //dame el padre de este archivo, es decir, el directorio donde está el archivo
         } catch (IOException e){
             System.err.println("No se pudo asegurar: " + e.getMessage());
         }
+
+        CsvTable table = new CsvTable();
 
         //apertura camino en memoria, creando buffer de lectura y lectura línea por línea del archivo.
         try (BufferedReader br = Files.newBufferedReader(RUTA, StandardCharsets.UTF_8)){
@@ -35,12 +38,13 @@ public class AppLeerCSV {
                 System.err.println("CSV está vacío");
                 return;
             }
-            List<String> headers = CsvUtils.parseCSVLine(linea);
+            List<String> listaCabecera = CsvUtils.parseCSVLine(linea);
+            table.setHeaders(listaCabecera);
 
             while ((linea= br.readLine()) != null){
 
                 List<String> campos = CsvUtils.parseCSVLine(linea);
-                //table.addRow(values)
+                table.addRow(campos);
             }
 
         } catch (NoSuchFileException e){ //excepción de que el archivo no exista en la ruta que pasamos en el try
@@ -51,5 +55,5 @@ public class AppLeerCSV {
 
 
         //Mostrar el contenido en una tabla
-    }
+
 }
