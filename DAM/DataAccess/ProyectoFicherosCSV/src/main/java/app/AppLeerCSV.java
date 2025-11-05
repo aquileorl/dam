@@ -50,8 +50,9 @@ public class AppLeerCSV {
         } catch (NoSuchFileException e){ //excepción de que el archivo no exista en la ruta que pasamos en el try
             System.err.println("No aparece el archivo: " + RUTA.toAbsolutePath());
         } catch (IOException e){
-            e.printStackTrace();
+            e.getMessage();
         }
+    }
 
 
         //Mostrar el contenido en una tabla
